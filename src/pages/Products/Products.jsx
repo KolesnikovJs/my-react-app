@@ -12,18 +12,23 @@ import "./Products.scss"
 const Products = () => {
      const [productState, setProductState]= useState(productsList);
      const [productsChecked, setProductsChecked] = useState([]);
+     const [displayProducts, serDisplayProducts] = useState(10);
+
+
      useEffect(()=>{
-        console.log(productState.length);
-    },[productState])
+    },[productState, displayProducts])
+
+    const handleDisplayChange = (event) => {
+        serDisplayProducts(Number(event.target.value))
+    }
    
-console.log(productsChecked);
     return (
         <>
-            <Search/>
+            <Search onDisplayChange={handleDisplayChange}/>
             <Button/>
             <MenuItems/>
             <div className="posts__products">
-            {productsList.map((item, index) => <Post key={index} index={index} productsChecked={productsChecked} setProductChecked={setProductsChecked} id={item.id} categories={item.categories} subcategory={item.subcategory} brand={item.brand} items={item.items} cashback={item.cashback}/>)}
+            {productsList.slice(0, displayProducts).map((item, index) => <Post key={index} index={index} productsChecked={productsChecked} setProductChecked={setProductsChecked} id={item.id} categories={item.categories} subcategory={item.subcategory} brand={item.brand} items={item.items} cashback={item.cashback}/>)}
             </div>
             {/* {productsChecked.length > 0 ? <ModalDelete/> : ''} */}
             {productsChecked.length > 0 && <ModalDelete productsChecked={productsChecked} />}

@@ -1,9 +1,9 @@
 import './Search.scss'
-const Search = () => {
+const Search = ({ onDisplayChange }) => {
     return (
         <form className='search'>
             <label className="label">Показывать</label>
-            <select className='select' id="items" name="items">
+            <select onChange={onDisplayChange} className='select' id="items" name="items">
                 <option value="10">10</option>
                 <option value="20">20</option>
                 <option value="30">30</option>
