@@ -26,7 +26,7 @@ console.log(productsChecked);
             {productsList.map((item, index) => <Post key={index} index={index} productsChecked={productsChecked} setProductChecked={setProductsChecked} id={item.id} categories={item.categories} subcategory={item.subcategory} brand={item.brand} items={item.items} cashback={item.cashback}/>)}
             </div>
             {/* {productsChecked.length > 0 ? <ModalDelete/> : ''} */}
-            <ModalDelete productsChecked={productsChecked} />
+            {productsChecked.length > 0 && <ModalDelete productsChecked={productsChecked} />}
         </>
     )
 }

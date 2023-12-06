@@ -1,25 +1,26 @@
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './Post.scss'
-// import productsList from '../Products/ProductsList';
 
-const Post = ( { productsChecked,setProductChecked, index, categories, subcategory, brand, items, cashback } ) => {
+const Post = ( { setProductChecked, index, categories, subcategory, brand, items, cashback } ) => {
 
     const [isChecked, setIsChecked]= useState(false)
 
-    useEffect(() => {
-        if(isChecked) {
-            productsChecked.push(index);
-            setProductChecked(productsChecked);
-            console.log(productsChecked);
-        }
-    }, [isChecked, index, productsChecked])
-   
-
+    const handleCheckboxChange = () => {
+        setIsChecked(prev => {
+          const newChecked = !prev;
+          if (newChecked) {
+            setProductChecked(prev => [...prev, index]);
+          } else {
+            setProductChecked(prev => prev.filter(item => item !== index));
+          }
+          return newChecked;
+        });
+      };
 
     return (
         <div className='posts'>
-            <input className='input__post' type='checkbox' onChange={()=>setIsChecked(!isChecked)}/>
+            <input className='input__post' type='checkbox' checked={isChecked} onChange={handleCheckboxChange}/>
             <span>{categories}</span>
             <span>{subcategory}</span>
             <span>{brand!== null ? brand : "-"}</span>
