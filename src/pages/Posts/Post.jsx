@@ -18,6 +18,7 @@ const Post = ( { setProductChecked, index, categories, subcategory, brand, items
         });
       };
 
+
     return (
         <div className='posts'>
             <input className='input__post' type='checkbox' checked={isChecked} onChange={handleCheckboxChange}/>
