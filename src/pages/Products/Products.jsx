@@ -27,8 +27,18 @@ const Products = () => {
         setAddModal(true);
     };
     const closeModal = () => {
+        let products = {
+            id: productState.length + 1,
+            categories: product.categories,
+            subcategory: product.subcategory,
+            brand: product.brand,
+            cashback: product.cashback,
+        };
         setAddModal(false);
+        setProductState([...productState, products]);
+        console.log(products);
     };
+
     const closeModalDelete = () => {
         setAddModalDelete(productsChecked.slice(0, length));
     };
@@ -67,7 +77,14 @@ const Products = () => {
                     productsChecked={productsChecked}
                 />
             )}
-            {addModal && <Modal closeModal={closeModal} />}
+            {addModal && (
+                <Modal
+                    closeModal={closeModal}
+                    productState={productState}
+                    setProductState={setProductState}
+                    setProducts={setProducts}
+                />
+            )}
         </>
     );
 };

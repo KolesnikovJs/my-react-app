@@ -22,7 +22,6 @@ const Post = ({
                     prev.filter((item) => item !== index),
                 );
             }
-            console.log(prev);
             return newChecked;
         });
     };
