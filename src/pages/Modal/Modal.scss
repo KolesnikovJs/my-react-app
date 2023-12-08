@@ -10,7 +10,6 @@
     left: 0;
     top: 0;
     background-color: #fff;
-    display: none;
 }
 .buttons__modal {
     display: flex;
@@ -30,13 +29,14 @@
     margin-left: 16px;
     margin-top: 20px;
     border-radius: 4px;
-    border: 1px solid var(--grayspace-layout-gray-30, #D0D3DA);
-    background: var(--grayspace-layout-white, #FFF);
+    border: 1px solid var(--grayspace-layout-gray-30, #d0d3da);
+    background: var(--grayspace-layout-white, #fff);
+    cursor: pointer;
 }
-.button__modal_sec{
+.button__modal_sec {
     border-radius: 4px;
-    border: 1px solid var(--cskc-06-ecc-400, #BD68CA);
-    background: var(--cskc-06-ecc-500, #C06ECC);
+    border: 1px solid var(--cskc-06-ecc-400, #bd68ca);
+    background: var(--cskc-06-ecc-500, #c06ecc);
     color: #fff;
 }
 .select__modal {
@@ -49,21 +49,19 @@
     gap: 8px;
     align-self: stretch;
     border-radius: 8px;
-    border: 1px solid var(--grayspace-layout-gray-30, #D0D3DA);
-    background: var(--grayspace-layout-white, #FFF);
+    border: 1px solid var(--grayspace-layout-gray-30, #d0d3da);
+    background: var(--grayspace-layout-white, #fff);
     margin-left: 25px;
     select {
         width: 100%;
         border: none;
-        
     }
-
 }
 .input__modal {
     height: 40px;
     width: 560px;
     padding: 10px 12px;
     border-radius: 8px;
-    border: 1px solid var(--grayspace-layout-gray-30, #D0D3DA);
-    background: var(--grayspace-layout-white, #FFF);
+    border: 1px solid var(--grayspace-layout-gray-30, #d0d3da);
+    background: var(--grayspace-layout-white, #fff);
 }
